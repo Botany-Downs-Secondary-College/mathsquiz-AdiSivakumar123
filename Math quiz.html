@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Math quiz.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Math quiz.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">tkinter </span><span class="s0">import</span><span class="s1">*</span>
+<span class="s0">class </span><span class="s1">MathQuiz:</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">parent):</span>
+        <span class="s2">&quot;&quot;&quot;Widgets for frame 1&quot;&quot;&quot;</span>
+        <span class="s1">self.frame1 = Frame(parent)</span>
+        <span class="s1">self.frame1.grid(row=</span><span class="s3">0</span><span class="s0">, </span><span class="s1">column=</span><span class="s3">0</span><span class="s1">)</span>
+
+        <span class="s1">self.TitleLabel = Label(self.frame1</span><span class="s0">, </span><span class="s1">bg=</span><span class="s4">&quot;black&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s4">&quot;white&quot;</span><span class="s0">, </span><span class="s1">width=</span><span class="s3">20</span><span class="s0">, </span><span class="s1">padx=</span><span class="s3">30</span><span class="s0">, </span><span class="s1">pady=</span><span class="s3">10</span><span class="s0">,</span>
+                                <span class="s1">text=</span><span class="s4">&quot;Welcome to Maths Quiz&quot;</span><span class="s0">, </span><span class="s1">font=(</span><span class="s4">&quot;Times&quot;</span><span class="s0">, </span><span class="s4">&quot;14&quot;</span><span class="s0">, </span><span class="s4">&quot;bold italic&quot;</span><span class="s1">))</span>
+        <span class="s1">self.TitleLabel.grid(columnspan=</span><span class="s3">2</span><span class="s1">)</span>
+        <span class="s1">self.button1 = Button(self.frame1</span><span class="s0">, </span><span class="s1">text=</span><span class="s4">&quot;Next&quot;</span><span class="s0">, </span><span class="s1">anchor=W</span><span class="s0">, </span><span class="s1">command=self.show_frame2)</span>
+        <span class="s1">self.button1.grid(row=</span><span class="s3">8</span><span class="s0">, </span><span class="s1">column=</span><span class="s3">1</span><span class="s1">)</span>
+
+        <span class="s4">&quot;&quot;&quot;Widgets for frame 2&quot;&quot;&quot;</span>
+        <span class="s1">self.frame2 = Frame(parent)</span>
+
+        <span class="s1">self.QuestionsLabel = Label(self.frame2</span><span class="s0">, </span><span class="s1">bg=</span><span class="s4">&quot;black&quot;</span><span class="s0">, </span><span class="s1">fg=</span><span class="s4">&quot;white&quot;</span><span class="s0">, </span><span class="s1">width=</span><span class="s3">20</span><span class="s0">, </span><span class="s1">padx=</span><span class="s3">30</span><span class="s0">, </span><span class="s1">pady=</span><span class="s3">10</span><span class="s0">,</span>
+                               <span class="s1">text=</span><span class="s4">&quot;Welcome to Maths Quiz&quot;</span><span class="s0">, </span><span class="s1">font=(</span><span class="s4">&quot;times&quot;</span><span class="s0">, </span><span class="s4">&quot;14&quot;</span><span class="s0">, </span><span class="s4">&quot;bold italic&quot;</span><span class="s1">))</span>
+        <span class="s1">self.QuestionsLabel.grid(columnspan = </span><span class="s3">2</span><span class="s1">)</span>
+        <span class="s1">self.home = Button(self.frame2</span><span class="s0">, </span><span class="s1">text=</span><span class="s4">&quot;Home&quot;</span><span class="s0">, </span><span class="s1">anchor=W</span><span class="s0">, </span><span class="s1">command=self.show_frame1)</span>
+        <span class="s1">self.home.grid(row=</span><span class="s3">1</span><span class="s0">, </span><span class="s1">column=</span><span class="s3">0</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">show_frame2(self):</span>
+        <span class="s1">self.frame1.grid_remove()</span>
+        <span class="s1">self.frame2.grid()</span>
+
+    <span class="s0">def </span><span class="s1">show_frame1(self):</span>
+        <span class="s1">self.frame2.grid_remove()</span>
+        <span class="s1">self.frame1.grid()</span>
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s4">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s1">root = Tk()</span>
+    <span class="s1">frames = MathQuiz(root)</span>
+    <span class="s1">root.title(</span><span class="s4">&quot;Maths Quiz&quot;</span><span class="s1">)</span>
+    <span class="s1">root.mainloop()</span>
+</pre>
+</body>
+</html>
